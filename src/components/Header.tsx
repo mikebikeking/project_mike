@@ -38,7 +38,7 @@ export function Header() {
                 </a>
               </li>)}
             <li>
-              <a href="src/assets/Michael_King_Resume.pdf" className="text-teal-400 border border-teal-400 rounded px-4 py-2 text-sm hover:bg-teal-400/10 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
+              <a href="/Michael_King_Resume.pdf" className="text-teal-400 border border-teal-400 rounded px-4 py-2 text-sm hover:bg-teal-400/10 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
                 Resume
               </a>
             </li>
@@ -60,7 +60,7 @@ export function Header() {
                   </a>
                 </li>)}
               <li className="mt-6">
-                <a href="/resume.pdf" className="text-teal-400 border border-teal-400 rounded px-6 py-3 text-sm hover:bg-teal-400/10 transition-colors duration-300" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+                <a href="/Michael_King_Resume.pdf" className="text-teal-400 border border-teal-400 rounded px-6 py-3 text-sm hover:bg-teal-400/10 transition-colors duration-300" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
                   Resume
                 </a>
               </li>
