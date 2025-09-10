@@ -1,8 +1,5 @@
 import React from "react";
 import { ExternalLinkIcon, GithubIcon, FolderIcon } from "lucide-react";
-import eport from "../assets/eport_pic.png";
-import work1 from "../assets/work1.png";
-import work3 from "../assets/work3.png";
 export function Projects() {
   const featuredProjects = [
     {
@@ -10,7 +7,7 @@ export function Projects() {
       description:
         "A minimal, light and dark themed portfolio website built with HTML and CSS. Features smooth scrolling, responsive design, and subtle animations.",
       tags: ["React", "Tailwind CSS", "Vite"],
-      image: eport,
+      image: "src/assets/eport_pic.png",
       github: "https://github.com/mikebikeking/EportfolioKing",
       external: "https://eportfolio-king.vercel.app/",
       reverse: false,
@@ -20,7 +17,7 @@ export function Projects() {
       description:
         "This React application uses React Router for dynamic navigation and Axios for data fetching, with Firebase handling its backend needs. It features a modern, user-friendly interface with animated carousels and smooth transitions powered by keen-slider and AOS. The project is built with standard npm scripts and integrates third-party assets to deliver a polished and engaging experience.",
       tags: ["React", "AXIOS", "", "Tailwind CSS"],
-      image: work1,
+      image: "src/assets/work1.png",
       github: "https://github.com/mikebikeking/michael-internship",
       external: "https://michael-internship.vercel.app/",
       reverse: true,
@@ -30,7 +27,7 @@ export function Projects() {
       description:
         "This React applicaion allows users to search for movies, view detailed information, and read reviews using the OMDB API. It features a clean, responsive design with intuitive navigation.",
       tags: ["React", "API", "Tailwind CSS", "Heroku"],
-      image: work3,
+      image: "src/assets/work3.png",
       github: "https://github.com/mikebikeking/Movie-React",
       external: "https://movie-app-react-939f82d3058d.herokuapp.com/",
       reverse: false,
