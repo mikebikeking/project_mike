@@ -1,4 +1,3 @@
-
 # Michael King - Frontend Developer Portfolio
 
 > From 20 years of precision bicycle mechanics to modern web development
