@@ -21,19 +21,19 @@ export function Projects() {
       description:
         "This React application uses React Router for dynamic navigation and Axios for data fetching, with Firebase handling its backend needs. It features a modern, user-friendly interface with animated carousels and smooth transitions powered by keen-slider and AOS. The project is built with standard npm scripts and integrates third-party assets to deliver a polished and engaging experience.",
       tags: ["React", "AXIOS", "", "Tailwind CSS"],
-      image: work1 ,
+      image: work1,
       github: "https://github.com/mikebikeking/michael-internship",
       external: "https://michael-internship.vercel.app/",
       reverse: true,
     },
     {
-      title: "Movie Review",
+      title: "Little Lemon",
       description:
-        "This React applicaion allows users to search for movies, view detailed information, and read reviews using the OMDB API. It features a clean, responsive design with intuitive navigation.",
-      tags: ["React", "API", "Tailwind CSS", "Heroku"],
-      image: work3 ,
-      github: "https://github.com/mikebikeking/Movie-React",
-      external: "https://movie-app-react-939f82d3058d.herokuapp.com/",
+        "A comprehensive React framework featuring modular reusable components, built-in performance monitoring with web vitals tracking, integrated testing utilities with custom matchers, and mock API functionality designed to streamline development and accelerate the creation of scalable, maintainable web applications.",
+      tags: ["React", "JavaScript", "npm", "JSON"],
+      image: work3,
+      github: "https://github.com/mikebikeking/meta-front-end-developer",
+      external: "https://meta-front-end-developer-six.vercel.app/",
       reverse: false,
     },
   ];
@@ -61,6 +61,29 @@ export function Projects() {
       tags: ["HTML", "CSS", "JavaScript", "React"],
       github: "https://github.com/mikebikeking/Beautiful-React-Templates",
       external: "https://mikebikeking.github.io/Beautiful-React-Templates/",
+    },
+    {
+      title: "Recipe Finder App",
+      description:
+        "A smart recipe discovery app that finds perfect recipes based on what you have in your kitchen, how much time you've got, and your dietary preferences. No more wondering 'what should I cook tonight?'",
+      tags: ["HTML", "CSS", "JavaScript"],
+      github: "https://github.com/mikebikeking/Recipe-Finder",
+      external: "https://recipe-finder-five-sigma.vercel.app/",
+    },
+    {
+      title: "Cycling Route Planner",
+      description:
+        "A smart cycling route planner and weather intelligence platform designed specifically for Boston cyclists. The app provides AI-powered recommendations, real-time weather analysis, and interactive route mapping to help cyclists make informed decisions about when and where to ride in the Boston metropolitan area.",
+      tags: ["React", "Typescript", "TailwindCSS", "Vite"],
+      github: "https://github.com/mikebikeking/cycling-route-planner",
+      external: "https://cycling-route-planner.vercel.app/",
+    },
+    {
+      title: "Lucky Shrub",
+      description:"A modern, responsive website for Lucky Shrub - a fictional garden design and landscaping business. This project demonstrates clean HTML structure, modern CSS styling techniques, and responsive design principles for a professional business homepage.",
+      tags: ["HTML", "CSS"],
+      github: "https://github.com/mikebikeking/Lucky-Shrub",
+      external: "https://lucky-shrub-liard.vercel.app/",
     },
   ];
   return (
