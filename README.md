@@ -1,6 +1,6 @@
 # Michael King - Frontend Developer Portfolio
 
-> From 20 years of precision bicycle mechanics to modern web development
+From 20 years of precision bicycle mechanics to modern web development
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Site-blue?style=for-the-badge)](https://eportfolio-king.vercel.app/)
 [![GitHub](https://img.shields.io/badge/GitHub-View%20Code-black?style=for-the-badge&logo=github)](https://github.com/mikebikeking/project_mike)
