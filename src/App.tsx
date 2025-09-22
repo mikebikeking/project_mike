@@ -6,11 +6,13 @@ import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
+import { Analytics } from "@vercel/analytics/next"
 export function App() {
   return <div className="bg-slate-900 text-slate-400 min-h-screen font-sans">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <Header />
         <main className="py-10">
+          <Analytics />
           <Hero />
           <About />
           <Experience />
