@@ -61,7 +61,7 @@ export function Footer() {
             className="text-slate-400 hover:text-teal-400 transition-colors duration-300 font-mono mb-6"
             style={{ writingMode: "vertical-rl" }}
           >
-            Mikebikeking@gmail.com
+            Mike@Mikeking.dev
           </button>
           <div className="w-px h-24 bg-slate-400"></div>
         </div>
