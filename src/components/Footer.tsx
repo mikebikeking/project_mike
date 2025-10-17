@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { GithubIcon, LinkedinIcon } from "lucide-react";
 import { ContactForm } from "./ContactForm";
+import { SocialLink } from "../types";
 
 export function Footer() {
   const [isContactFormOpen, setIsContactFormOpen] = useState(false);
 
-  const socialLinks = [
+  const socialLinks: SocialLink[] = [
     {
       icon: <GithubIcon size={20} />,
       url: "https://github.com/mikebikeking",

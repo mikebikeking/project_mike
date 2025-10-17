@@ -1,12 +1,30 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { MenuIcon, XIcon } from 'lucide-react';
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+      
+      // Update active section based on scroll position
+      const sections = ['about', 'experience', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+    
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -31,12 +49,25 @@ export function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:block">
           <ul className="flex space-x-8">
-            {navItems.map((item, index) => <li key={item.name}>
-                <a href={item.href} className="text-slate-300 hover:text-teal-400 transition-colors duration-300 text-sm">
-                  <span className="text-teal-400 mr-1">0{index + 1}.</span>{' '}
-                  {item.name}
-                </a>
-              </li>)}
+            {navItems.map((item, index) => {
+              const sectionId = item.href.replace('#', '');
+              const isActive = activeSection === sectionId;
+              return (
+                <li key={item.name}>
+                  <a 
+                    href={item.href} 
+                    className={`transition-colors duration-300 text-sm ${
+                      isActive 
+                        ? 'text-teal-400' 
+                        : 'text-slate-300 hover:text-teal-400'
+                    }`}
+                  >
+                    <span className="text-teal-400 mr-1">0{index + 1}.</span>{' '}
+                    {item.name}
+                  </a>
+                </li>
+              );
+            })}
             <li>
               <a href="/Michael_King_Resume.pdf" className="text-teal-400 border border-teal-400 rounded px-4 py-2 text-sm hover:bg-teal-400/10 transition-colors duration-300" target="_blank" rel="noopener noreferrer">
                 Resume
@@ -53,12 +84,26 @@ export function Header() {
       {isMenuOpen && <div className="fixed inset-0 bg-slate-900/95 flex flex-col items-center justify-center md:hidden z-40">
           <nav>
             <ul className="flex flex-col items-center space-y-6">
-              {navItems.map((item, index) => <li key={item.name}>
-                  <a href={item.href} className="text-slate-300 hover:text-teal-400 transition-colors duration-300 text-lg" onClick={() => setIsMenuOpen(false)}>
-                    <span className="text-teal-400 mr-2">0{index + 1}.</span>{' '}
-                    {item.name}
-                  </a>
-                </li>)}
+              {navItems.map((item, index) => {
+                const sectionId = item.href.replace('#', '');
+                const isActive = activeSection === sectionId;
+                return (
+                  <li key={item.name}>
+                    <a 
+                      href={item.href} 
+                      className={`transition-colors duration-300 text-lg ${
+                        isActive 
+                          ? 'text-teal-400' 
+                          : 'text-slate-300 hover:text-teal-400'
+                      }`} 
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span className="text-teal-400 mr-2">0{index + 1}.</span>{' '}
+                      {item.name}
+                    </a>
+                  </li>
+                );
+              })}
               <li className="mt-6">
                 <a href="/Michael_King_Resume.pdf" className="text-teal-400 border border-teal-400 rounded px-6 py-3 text-sm hover:bg-teal-400/10 transition-colors duration-300" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
                   Resume

@@ -1,5 +1,5 @@
-import React from "react";
 import Mike from "../assets/Mike_192.jpg";
+import { OptimizedImage } from "./OptimizedImage";
 
 export function About() {
   const skills = [
@@ -55,10 +55,11 @@ export function About() {
           <div className="relative">
             <div className="relative rounded-md overflow-hidden bg-teal-400/20 aspect-square">
               
-              <img
+              <OptimizedImage
                 src={Mike}
                 alt="Michael King"
-                className="w-full h-full object-cover"
+                className="w-full h-full"
+                loading="eager"
               />
             </div>
           </div>

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import { ContactFormProps } from '../types';
 
-export function ContactForm({ onClose }) {
+export function ContactForm({ onClose }: ContactFormProps) {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -19,7 +20,7 @@ export function ContactForm({ onClose }) {
     setTimeout(onClose, 500); 
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSending(true);
     setStatusMessage('Sending...');
@@ -30,7 +31,12 @@ export function ContactForm({ onClose }) {
       message: message,
     };
 
-    emailjs.send('service_8esl8wr', 'template_wa84bw7', templateParams, '3xJHrGFTGXPgQMtws')
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      templateParams,
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         setStatusMessage('Message sent successfully!');
@@ -106,7 +112,7 @@ export function ContactForm({ onClose }) {
               placeholder="Message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              rows="5"
+              rows={5}
               required
               className="w-full bg-slate-700 text-slate-300 p-3 rounded-md border border-transparent focus:border-teal-400 focus:outline-none"
             ></textarea>

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Job } from '../types';
 export function Experience() {
   const [activeTab, setActiveTab] = useState(0);
-  const jobs = [{
+  const jobs: Job[] = [{
     company: 'Skinstric AI',
     position: 'Software Engineer Internship',
     period: 'April 2025 - May 2025',

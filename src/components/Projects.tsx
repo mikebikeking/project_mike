@@ -1,11 +1,12 @@
-import React from "react";
 import eport from "../assets/eport_pic.png";
 import work1 from "../assets/work1.png";
 import work3 from "../assets/work3.png";
 import { ExternalLinkIcon, GithubIcon, FolderIcon } from "lucide-react";
+import { Project } from "../types";
+import { OptimizedImage } from "./OptimizedImage";
 
 export function Projects() {
-  const featuredProjects = [
+  const featuredProjects: Project[] = [
     {
       title: "Portfolio Website",
       description:
@@ -37,12 +38,13 @@ export function Projects() {
       reverse: false,
     },
   ];
-  const otherProjects = [
+  const otherProjects: Project[] = [
     {
       title: "Portfolio Website",
       description:
         "A minimal, light and dark themed portfolio website built with HTML and CSS. Features smooth scrolling, responsive design, and subtle animations.",
       tags: ["HTML", "CSS", "Modal", "JavaScript"],
+      image: eport,
       github: "https://github.com/mikebikeking/Eportfolio",
       external: "https://eportfolio-liart.vercel.app/",
     },
@@ -51,6 +53,7 @@ export function Projects() {
       description:
         "This project involved a full redesign of Skinstric.ai's website, an AI-powered skincare platform, using Next.js and TailwindCSS to create a modern, high-performance online presence.",
       tags: ["JavaScript", "React", "TailwindCSS", "AOS"],
+      image: work1,
       github: "https://github.com/mikebikeking/Skinstric-AI",
       external: "https://skinstric-ai-gold.vercel.app/",
     },
@@ -59,6 +62,7 @@ export function Projects() {
       description:
         "This landing page showcases beautiful and customizable React templates.  The design is visually appealing and responsive, aiming to attract developers seeking efficient and professional website solutions.",
       tags: ["HTML", "CSS", "JavaScript", "React"],
+      image: work3,
       github: "https://github.com/mikebikeking/Beautiful-React-Templates",
       external: "https://mikebikeking.github.io/Beautiful-React-Templates/",
     },
@@ -67,6 +71,7 @@ export function Projects() {
       description:
         "A smart recipe discovery app that finds perfect recipes based on what you have in your kitchen, how much time you've got, and your dietary preferences. No more wondering 'what should I cook tonight?'",
       tags: ["HTML", "CSS", "JavaScript"],
+      image: eport,
       github: "https://github.com/mikebikeking/Recipe-Finder",
       external: "https://recipe-finder-five-sigma.vercel.app/",
     },
@@ -75,6 +80,7 @@ export function Projects() {
       description:
         "A smart cycling route planner and weather intelligence platform designed specifically for Boston cyclists. The app provides AI-powered recommendations, real-time weather analysis, and interactive route mapping to help cyclists make informed decisions about when and where to ride in the Boston metropolitan area.",
       tags: ["React", "Typescript", "TailwindCSS", "Vite"],
+      image: work1,
       github: "https://github.com/mikebikeking/cycling-route-planner",
       external: "https://cycling-route-planner.vercel.app/",
     },
@@ -82,6 +88,7 @@ export function Projects() {
       title: "Lucky Shrub",
       description:"A modern, responsive website for Lucky Shrub - a fictional garden design and landscaping business. This project demonstrates clean HTML structure, modern CSS styling techniques, and responsive design principles for a professional business homepage.",
       tags: ["HTML", "CSS"],
+      image: work3,
       github: "https://github.com/mikebikeking/Lucky-Shrub",
       external: "https://lucky-shrub-liard.vercel.app/",
     },
@@ -100,33 +107,30 @@ export function Projects() {
         {featuredProjects.map((project, index) => (
           <div
             key={index}
-            className={`relative grid md:grid-cols-12 gap-4 items-center ${
-              project.reverse ? "md:text-right" : ""
-            }`}
+            className={`relative grid grid-cols-1 md:grid-cols-2 gap-8 items-start`}
           >
             {/* Project Image */}
-            <a
-              href={project.external}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`md:col-span-7 relative rounded-md overflow-hidden ${
-                project.reverse ? "md:col-start-6" : "md:col-start-1"
-              }`}
-            >
-              <div className="absolute inset-0 bg-teal-400/20 hover:bg-transparent transition duration-300 z-10"></div>
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover"
-              />
-            </a>
+            <div className={`${project.reverse ? "md:order-2" : "md:order-1"}`}>
+              <p className="text-teal-400 font-mono mb-4">Featured Project</p>
+              <a
+                href={project.external}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative rounded-md overflow-hidden block group"
+              >
+                <OptimizedImage
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full transition-transform duration-300 group-hover:scale-105"
+                />
+              </a>
+            </div>
             {/* Project Content */}
             <div
-              className={`md:col-span-6 ${
-                project.reverse ? "md:col-start-1" : "md:col-start-7 md:z-10"
+              className={`${
+                project.reverse ? "md:order-1 text-right" : "md:order-2"
               }`}
             >
-              <p className="text-teal-400 font-mono mb-1">Featured Project</p>
               <h3 className="text-xl font-bold text-slate-200 mb-4">
                 {project.title}
               </h3>
